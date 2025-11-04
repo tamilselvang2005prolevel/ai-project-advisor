@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AI Project Advisor</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- WebLLM (browser LLM) -->
+  <script defer src="https://unpkg.com/@mlc-ai/web-llm/dist/index.js"></script>
+  <script defer src="prompts.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1>AI Project Advisor</h1>
+    <p class="tagline">Enter an idea. Get a full plan.</p>
+  </header>
+
+  <main class="container">
+    <section class="card input-card">
+      <label for="idea">Your project idea</label>
+      <textarea id="idea" placeholder="e.g., 'Embedded: ESP32-based smart door lock with mobile app'"></textarea>
+
+      <div class="row">
+        <label for="domain">Domain</label>
+        <select id="domain">
+          <option>Embedded</option>
+          <option>Software</option>
+          <option>Web</option>
+          <option>Mobile</option>
+          <option>AI/ML</option>
+          <option>IoT</option>
+          <option>Robotics</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <button id="analyzeBtn" class="btn">Analyze Idea</button>
+      <div id="status" class="status"></div>
+      <details class="hint">
+        <summary>Why is this free?</summary>
+        <p>It runs the model locally in your browser with WebGPU via WebLLM—no server or API key required.</p>
+      </details>
+    </section>
+
+    <section id="results" class="card results-card hidden">
+      <h2>Advisor Report</h2>
+      <div id="meta" class="meta"></div>
+
+      <div class="grid">
+        <div class="block">
+          <h3>1) Best Components</h3>
+          <ul id="components"></ul>
+        </div>
+        <div class="block">
+          <h3>2) Best Tools</h3>
+          <ul id="tools"></ul>
+        </div>
+        <div class="block">
+          <h3>3) Procedure</h3>
+          <ol id="procedure"></ol>
+        </div>
+        <div class="block">
+          <h3>4) Estimated Cost</h3>
+          <div id="cost"></div>
+        </div>
+        <div class="block">
+          <h3>5) Existing / Similar Projects</h3>
+          <ul id="existing"></ul>
+        </div>
+        <div class="block">
+          <h3>6) Improvements</h3>
+          <ul id="improvements"></ul>
+        </div>
+        <div class="block">
+          <h3>7) Time Estimate</h3>
+          <div id="time"></div>
+        </div>
+        <div class="block">
+          <h3>8) Rating</h3>
+          <div id="rating"></div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="copyJson" class="btn btn-secondary">Copy JSON</button>
+        <button id="reset" class="btn btn-ghost">New Analysis</button>
+      </div>
+
+      <pre id="raw" class="raw hidden"></pre>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>Built with WebLLM • Host on Vercel</small>
+  </footer>
+</body>
+</html>

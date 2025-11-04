@@ -1,0 +1,35 @@
+:root {
+  --bg: #0b0e13;
+  --fg: #e6ebf3;
+  --muted: #98a2b3;
+  --card: #121722;
+  --accent: #7aa2ff;
+  --accent-2: #5ce0b9;
+  --border: #1c2332;
+}
+* { box-sizing: border-box; }
+html,body { margin:0; padding:0; background:var(--bg); color:var(--fg); font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif; }
+.container { max-width: 1100px; margin: 24px auto 80px; padding: 0 16px; }
+.site-header { padding: 32px 16px 0; text-align: center; }
+h1 { margin: 0; font-size: 34px; letter-spacing: 0.3px; }
+.tagline { margin: 8px 0 0; color: var(--muted); }
+.card { background: var(--card); border:1px solid var(--border); border-radius: 16px; padding: 18px; box-shadow: 0 10px 20px rgba(0,0,0,0.25); }
+.input-card textarea { width:100%; min-height: 110px; resize: vertical; padding: 12px; border-radius: 12px; border:1px solid var(--border); background: #0e1420; color: var(--fg); }
+.row { display:flex; gap:12px; align-items:center; margin: 12px 0; }
+select { background:#0e1420; color:var(--fg); border:1px solid var(--border); border-radius:12px; padding:10px; }
+.btn { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color:#0a0f18; font-weight:700; padding:10px 14px; border-radius:12px; border:none; cursor:pointer; }
+.btn:disabled { opacity:.6; cursor:not-allowed; }
+.btn-secondary { background:#1a2436; color:var(--fg); border:1px solid var(--border); }
+.btn-ghost { background:transparent; border:1px dashed var(--border); color:var(--muted); }
+.status { margin-top: 10px; color: var(--muted); min-height: 20px; }
+.hint { margin-top: 10px; color: var(--muted); }
+.results-card { margin-top: 18px; }
+.grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap:16px; margin-top:10px; }
+.block { background:#0f1523; border:1px solid var(--border); border-radius:12px; padding:12px; }
+.block h3 { margin:0 0 8px; font-size: 16px; }
+.meta { margin: 8px 0 12px; color: var(--muted); }
+.actions { margin-top: 14px; display:flex; gap:8px; }
+.raw { background:#0a0f18; color:#cfe4ff; border-radius:12px; padding:12px; overflow:auto; max-height: 300px; border:1px solid var(--border);}
+.hidden { display:none; }
+.site-footer { text-align:center; color:var(--muted); margin: 28px 0 40px; }
+ul,ol { margin:0; padding-left: 18px; }
